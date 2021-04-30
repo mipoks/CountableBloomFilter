@@ -30,7 +30,7 @@ public class BloomFilter<T> {
 
     public BloomFilter(int countObjects, AbstractHashFunction<T>[] hashFunctions, int capacity) {
         this.array = new int[capacity];
-        this.hashFunctions = generateHashFunc(hashFunctions.length);
+        this.hashFunctions = hashFunctions;
         this.precision = Math.pow(
                 (1 - Math.pow(Math.E, (-1.0 * hashFunctions.length * countObjects / capacity))), hashFunctions.length);
     }
