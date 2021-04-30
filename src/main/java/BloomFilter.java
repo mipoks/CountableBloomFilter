@@ -10,7 +10,7 @@ public class BloomFilter<T> {
         this.array = new int[capacity];
         int i = 1;
         double tempPrecision = 1;
-        while (tempPrecision > precision) {
+        while (Double.compare(tempPrecision, precision) > 0) {
             tempPrecision = Math.pow((1 - Math.pow(Math.E, (-1.0 * i * countObjects / capacity))), i);
             i++;
             if (i > capacity) {

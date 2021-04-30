@@ -33,7 +33,9 @@ public class Main {
 
         String[] arr = text.trim().split("[\\s,\n!@#$%^&*().{}\\[\\]]{1,}");
 
-        BloomFilter<String> bloomFilter = new BloomFilter<String>(0.0001, arr.length, 18000);
+        BloomFilter<String> bloomFilter =
+                new BloomFilter<String>(0.0001, arr.length, 18000);
+
         for (String s : arr) {
             bloomFilter.add(s);
         }
